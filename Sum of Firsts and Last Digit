@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{int t,i,n,l,f;
+cin>>t;
+for(i=0;i<t;i++)
+{cin>>n;
+l=n%10;
+f=n;
+while(f>=10)
+{f=f/10;
+}
+cout<<f+l<<endl;}
+return 0;
+}
