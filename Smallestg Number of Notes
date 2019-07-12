@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+  int t,n,m,r;
+  cin>>t;
+  int i,s;
+  int f[]={100,50,10,5,2,1};
+  int d[1000];
+ 
+  for(i=0;i<t;i++){
+    cin>>n;
+    m=0;
+    for(s=0;s<6;s++){
+        r=n/f[s];
+        n=n%f[s];
+        m=m+r;
+        }
+    d[i]=m;
+  }
+  for(i=0;i<t;i++){
+    cout<<d[i]<<endl;
+  }
+  return 0;
+}
