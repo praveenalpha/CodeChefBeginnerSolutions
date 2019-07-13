@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,i,n;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>n;
+        int b,m,a=0;
+        b=n;
+        while(b>0)
+        {
+            m=b%10;
+            a=a*10+m;
+            b=b/10;
+        }
+        if(n==a)
+        {
+            cout<<"wins"<<endl;
+        }
+        else
+        {
+            cout<<"losses"<<endl;
+        }
+    }
+    return 0;
+}
