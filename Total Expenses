@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	long long int t, q, p;
+	double ans;
+	cin >> t;
+	while(t--)
+	{
+	    ans=0;
+	    cin>> q >> p;
+	    cout << fixed;
+	    if(q>1000)
+	    {
+	        ans = q*p*0.9;
+	        cout << ans <<endl;
+	    }
+	    else
+	    {
+	        ans = q*p;
+	        cout << ans << endl;
+	    }
+	}
+	return 0;
+}
