@@ -1,0 +1,30 @@
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+    int t;
+    
+
+    cin>>t;
+    while(t--)
+    {
+        int x1,y1,x2,y2,x3,y3;
+         double r,x,y,z;
+        cin>>r;
+        cin>>x1>>y1>>x2>>y2>>x3>>y3;
+
+        x=sqrt(pow(x2 - x1, 2)+pow(y2 - y1, 2));
+        y=sqrt(pow(x3 - x1, 2)+pow(y3 - y1, 2));
+        z=sqrt(pow(x2 - x3, 2)+pow(y2 - y3, 2));
+
+        if((x<=r && y<=r) || (x<=r && z<=r) || (y<=r && z<=r))
+            cout<<"yes\n";
+        else
+            cout<<"no\n";
+    }
+	return 0;
+}
