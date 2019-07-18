@@ -1,0 +1,28 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n,hra=0;
+		double gs=0,da=0;
+		cin>>n;
+		if(n>=1500)
+		{
+		
+			hra=500;
+			da=.98*n;
+			gs=n+hra+da;
+			cout<<fixed<<setprecision(2)<<gs<<endl;
+		}
+		else
+		{
+			
+			gs=n*2;
+			cout<<fixed<<setprecision(2)<<gs<<endl;
+		}
+	}
+}
