@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t,m,n,k;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n>>m>>k;
+		if(n==m)
+			cout<<"0"<<endl;
+		else
+		{
+			int diff=abs(m-n);
+			if(diff<=k)
+				cout<<"0"<<endl;
+			else
+				cout<<max(m,n)-( min(m,n)+k )<<endl;			
+		}
+	}
+	
+}
