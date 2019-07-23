@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+
+    while(t--)
+    {
+        int M,x,y;
+        cin>>M>>x>>y;
+
+        int total=100;
+        int range=x*y;
+        int cop;
+
+        int a[101]={};
+
+        for(int i=0; i<M;i++)
+        {
+            cin>>cop;
+
+            int l1= cop-range;
+            int l2= cop+range;
+
+
+
+            for(int i=cop; i<=cop+range; i++)
+                {
+                    if(i<=100)
+                        a[i]++;
+
+                }
+
+            if(cop-range >=1)
+                {
+                    for(int i= cop-range; i<=cop; i++)
+                        a[i]++;
+                }
+
+            if(cop-range<1)
+                {
+                    for(int i=1; i<=range; i++)
+                        a[i]++;
+                }
+
+
+
+        }
+
+        int count=0;
+
+        for(int i=1; i<=100; i++)
+            if(a[i]==0)
+                count++;
+
+        cout<<count<<endl;
+
+    }
+
+
+
+}
