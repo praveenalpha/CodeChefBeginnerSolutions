@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+ int t; 
+ cin>>t;
+ assert(t>=1&&t<=100);
+ while(t--)
+ {int i=0,countb=0,counta=0,min;
+  char c[100];
+  cin>>c;
+  while(c[i]!='\0')
+  {
+   if(c[i]=='b')
+    countb++;
+   else
+    if(c[i]=='a')
+      counta++;
+   i++;
+  }
+ if(counta<=countb)
+  cout<<counta<<endl;
+ else
+  cout<<countb<<endl;
+ }
+return 0;
+}
