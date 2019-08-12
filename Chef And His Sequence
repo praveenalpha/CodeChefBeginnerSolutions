@@ -1,0 +1,34 @@
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+
+int main(){
+	int T,i;
+	scanf("%d",&T);
+	for(i=0;i<T;i++){
+		int ln,lf,j,k;
+		scanf("%d",&ln);
+		int N[ln];
+		for(j=0;j<ln;j++){
+			scanf("%d",&N[j]);
+		}
+		scanf("%d",&lf);
+		int F[lf];
+		for(j=0;j<lf;j++){
+			scanf("%d",&F[j]);
+		}
+		k=0;
+		for(j=0;j<ln;j++){
+			if(N[j]==F[k])
+				k++;
+			if(k==lf)
+				break;
+		}
+		if(k==lf)
+			printf("Yes\n");
+		else
+			printf("No\n");
+	}
+	return 0;
+}
