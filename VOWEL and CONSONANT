@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count=0,i;
+	char ch,a[]={'A','E','I','O','U'};
+	cin>>ch;
+	for(i=0;i<sizeof(a);i++)
+	{
+	    if(ch==a[i])
+	    count++;
+	}
+	if(count==1)
+	cout<<"Vowel";
+	else
+	cout<<"Consonant";
+	return 0;
+}
