@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	int i,arr[t];
+	for(i=0;i<t;i++){
+		cin>>arr[i];
+	}
+	sort(arr,arr+t);
+	for(i=0;i<t;i++){
+		cout<<arr[i]<<endl;
+	}
+	return 0;
+}
