@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int A,B,N,C,D,X;
+		cin>>A>>B>>N;
+		if(N%2!=0)
+		{
+			C=2*A;
+			D=B;
+		}
+		else
+		{
+			C=A;
+			D=B;
+		}
+		X=max(C,D)/min(C,D);
+		cout<<X<<endl;
+	}
+	return 0;
+}
