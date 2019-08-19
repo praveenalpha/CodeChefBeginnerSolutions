@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define fast ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+int main()
+{
+    fast;
+    int t;
+    cin>>t;
+    while(t--){
+        int n,k,x,y;
+        cin>>n>>k;
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            cin>>x;
+            y=x/k;
+            if(y==0) cnt+=k-x;
+            else cnt+=min(x-y*k,(y+1)*k-x);
+        }
+        cout<<cnt<<endl;
+    }
+    return 0;
+}
