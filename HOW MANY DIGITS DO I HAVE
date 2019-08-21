@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int N,d=0;
+    cin>>N;
+    if(N<0||N>1000000)
+    {
+        exit(0);
+    }
+    while(N>0)
+    {
+        N=N/10;
+        d++;
+    }
+    if(d==1)
+    {
+        cout<<"\n1";
+    }
+    else if(d==2)
+    {
+        cout<<"\n2";
+    }
+    else if(d==3)
+    {
+        cout<<"\n3";
+    }
+    else 
+    {
+        cout<<"More than 3 digits";
+    }
+    return 0;
+}
