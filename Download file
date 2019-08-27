@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,k;
+	    cin>>n>>k;
+	    int t,d,sol=0;
+	  for(int i=0;i<n;i++){
+	      cin>>t>>d;
+	      if(t<k){
+				k= k - t;
+			} else {
+				sol += (t-k)*d;
+				k=0;
+			}
+		}
+		cout<<sol<<endl;
+	      
+	}
+	
+	return 0;
+}
