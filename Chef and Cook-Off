@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    
+    {
+        int a1,a2,a3,a4,a5;
+        cin>>a1>>a2>>a3>>a4>>a5;
+        if((a1+a2+a3+a4+a5)==0)
+        {
+            cout<<"Beginner"<<endl;;
+            
+        }
+        else if((a1+a2+a3+a4+a5)==1)
+        {
+            cout<<"Junior Developer"<<endl;
+        }
+        else if((a1+a2+a3+a4+a5)==2)
+        {
+            cout<<"Middle Developer"<<endl;
+        }
+        else if((a1+a2+a3+a4+a5)==3)
+        {
+            cout<<"Senior Developer"<<endl;
+        }
+        else if((a1+a2+a3+a4+a5)==4)
+        {
+            cout<<"Hacker"<<endl;
+        }
+        else
+        {
+            cout<<"Jeff Dean"<<endl;
+        }
+        }
+        return 0;
+}
