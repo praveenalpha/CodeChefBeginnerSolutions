@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,x,arr[7]={4,4,4,4,4,4,4};
+        string s;
+        cin>>n>>s;
+        if(s=="mon")
+            x=0;
+        else if(s=="tues")
+            x=1;
+        else if(s=="wed")
+            x=2;
+        else if(s=="thurs")
+            x=3;
+        else if(s=="fri")
+            x=4;
+        else if(s=="sat")
+            x=5;
+        else if(s=="sun")
+            x=6;
+        for(int i=0;i<n%7;i++)
+        {
+            arr[(i+x)%7]++;
+        }
+        for(int i=0;i<7;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
+        
+    }
+    return 0;
+}
+
+    
+    
