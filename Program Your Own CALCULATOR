@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    double A, B;
+    cin >> A >> B;
+    string C;
+    cin >> C;
+
+    if (C == "+")
+        cout << A + B;
+    else if (C == "-")
+        cout << A - B;
+    else if (C == "*")
+        cout << A * B;
+    else if (C == "/")
+        cout << fixed << setprecision(6) << A / B << endl;
+    // cout<<Ans<<endl;
+
+     // your code goes here
+    return 0;
+}
