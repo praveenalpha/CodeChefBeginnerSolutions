@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long int T;
+    cin>>T;
+    while(T--)
+    {
+        long long int N;
+        cin>>N;
+        long long int A[N],B[N],sum=0;
+        for(long long int i=0;i<N;i++)
+        {
+            cin>>A[i];
+        }
+        for(long long int i=0;i<N;i++)
+        {
+            cin>>B[i];
+        }
+        sort(A,A+N);
+        sort(B,B+N);
+        for(long long int i=0;i<N;i++)
+        {
+            sum+=min(A[i],B[i]);
+        }
+        cout<<sum<<endl;
+    }
+	// your code goes here
+	return 0;
+}
