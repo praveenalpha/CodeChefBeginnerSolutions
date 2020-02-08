@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int N;
+        cin>>N;
+        long long int A[N],K,coins_removed=0,ans;
+        cin>>K;
+        for(int i=0;i<N;i++)
+        {
+            
+            cin>>A[i];
+            if(i!=N-1)
+            {
+                coins_removed=coins_removed+(A[i]%K);
+            }
+            else
+            {
+                ans=(A[i]+coins_removed)%K;
+            }
+        }
+        cout<<ans<<endl;
+        
+        
+        
+    }
+	// your code goes here
+	return 0;
+}
