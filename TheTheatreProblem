@@ -1,0 +1,205 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int main() 
+{
+    int T, total_profit = 0;
+    cin >> T;
+    while (T--)
+    {
+        int N;
+        int profit_each_case = 0;
+        cin >> N;
+        char movie;
+        int timming;
+        int A[4][4] = { 0 };
+        int maximum_reqst=0, maximum_I=0, maximum_J=0;
+        int sec_maximum_reqst=0, sec_maximum_I=0, sec_maximum_J=0;
+        int third_maximum_reqst=0, third_maximum_I=0, third_maximum_J=0;
+        int fourth_maximum_reqst=0, fourth_maximum_I=0, fourth_maximum_J=0;
+
+        for (int i = 0; i < N; i++)
+        {
+            cin >> movie>>timming;
+            if (movie == 'A' && timming == 12)
+            {
+                A[0][0]++;
+
+            }
+            else if (movie == 'B' && timming == 12)
+            {
+                A[1][0]++;
+            }
+            else if (movie == 'C' && timming == 12)
+            {
+                A[2][0]++;
+            }
+            else if (movie == 'D' && timming == 12)
+            {
+                A[3][0]++;
+            }
+            else if (movie == 'A' && timming == 3)
+            {
+                A[0][1]++;
+            }
+            else if (movie == 'B' && timming == 3)
+            {
+                A[1][1]++;
+            }
+            else if (movie == 'C' && timming == 3)
+            {
+                A[2][1]++;
+            }
+            else if (movie == 'D' && timming == 3)
+            {
+                A[3][1]++;
+            }
+            else if (movie == 'A' && timming == 6)
+            {
+                A[0][2]++;
+            }
+            else if (movie == 'B' && timming == 6)
+            {
+                A[1][2]++;
+            }
+            else if (movie == 'C' && timming == 6)
+            {
+                A[2][2]++;
+            }
+            else if (movie == 'D' && timming == 6)
+            {
+                A[3][2]++;
+            }
+            else if (movie == 'A' && timming == 9)
+            {
+                A[0][3]++;
+            }
+            else if (movie == 'B' && timming == 9)
+            {
+                A[1][3]++;
+            }
+            else if (movie == 'C' && timming == 9)
+            {
+                A[2][3]++;
+            }
+            else if (movie == 'D' && timming == 9)
+            {
+                A[3][3]++;
+            }
+
+
+        }
+   /*     for(int i=0;i<4;i++)
+        {
+            for(int j =0;j<4;j++)
+            {
+                cout<<A[i][j];
+            }
+            cout<<endl;
+        }
+}
+}
+*/
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                
+                if (maximum_reqst < A[i][j])
+                {
+                    maximum_reqst = A[i][j];
+                    maximum_I = i;
+                    maximum_J = j;
+                }
+                else
+                    continue;
+            }
+        }
+        //cout<<maximum_reqst;
+        if (maximum_reqst == 0)
+            profit_each_case = profit_each_case - 100;
+        else
+        {
+            profit_each_case = profit_each_case + (maximum_reqst * 100);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (i == maximum_I || j == maximum_J)
+                    continue;
+                else if (sec_maximum_reqst < A[i][j])
+                {
+                    sec_maximum_reqst = A[i][j];
+                    sec_maximum_I = i;
+                    sec_maximum_J = j;
+                }
+                else
+                    continue;
+
+            }
+        }
+        //cout<<sec_maximum_reqst;
+        if (sec_maximum_reqst == 0)
+            profit_each_case = profit_each_case - 100;
+        else
+        {
+            profit_each_case = profit_each_case + (sec_maximum_reqst * 75);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (i == maximum_I || j == maximum_J || i == sec_maximum_I || j == sec_maximum_J)
+                    continue;
+                else if (third_maximum_reqst < A[i][j])
+                {
+                    third_maximum_reqst = A[i][j];
+                    third_maximum_I = i;
+                    third_maximum_J = j;
+                }
+                else
+                    continue;
+
+            }
+        }
+        //cout<<third_maximum_reqst;
+        if (third_maximum_reqst == 0)
+            profit_each_case = profit_each_case - 100;
+        else
+        {
+            profit_each_case = profit_each_case + (third_maximum_reqst * 50);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (i == maximum_I || j == maximum_J || i == sec_maximum_I || j == sec_maximum_J
+                    || i == third_maximum_I || j == third_maximum_J)
+                    continue;
+                else if (fourth_maximum_reqst < A[i][j])
+                {
+                    fourth_maximum_reqst = A[i][j];
+                    fourth_maximum_I = i;
+                    fourth_maximum_J = j;
+                }
+                else
+                    continue;
+
+            }
+        }
+        //cout<<fourth_maximum_reqst<<endl;
+        if (fourth_maximum_reqst == 0)
+            profit_each_case = profit_each_case - 100;
+        else
+        {
+            profit_each_case = profit_each_case + (fourth_maximum_reqst * 25);
+        }
+        total_profit += profit_each_case;
+        cout<<profit_each_case<<endl;
+    }
+    cout<<total_profit<<endl;
+    return 0;
+
+}
+
