@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int N,M;
+        cin>>N>>M;
+        vector<int> F;
+        vector<int> P;
+        vector<int> copy;
+        int temp;
+        for(int i=0;i<N;i++)      //input F[i]
+        {
+            cin>>temp;
+            F.push_back(temp);
+        }
+        for(int i=0;i<N;i++)     //input P[i]
+        {
+            cin>>temp;
+            P.push_back(temp);
+        }
+        for(int i=0;i<N;i++)     //copy all elements of F in copy[]
+        {
+            copy.push_back(F[i]);
+        }
+        vector<int>::iterator ip; 
+        sort(copy.begin(),copy.end());      //sort copy[]
+        ip=unique(copy.begin(),copy.end());
+        copy.resize(distance(copy.begin(),ip));
+        int k=copy.size();
+        int individual_price[k]={0};  //for each unique value in                of F[] store price of each               basket
+        for(int i=0;i<k;i++)
+        {
+            for(int j=0;j<N;j++)
+            {
+                if(copy[i]==F[j])
+                {
+                    individual_price[i]+=P[j];
+                }
+            }
+        }
+        sort(individual_price,individual_price+k); 
+        cout<<individual_price[0]<<endl;
+    }
+        return 0;
+}
