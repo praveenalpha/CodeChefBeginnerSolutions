@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int n,s;
+        cin>>n>>s;
+        long long int p[n],fd[n];
+        for(long long int i=0;i<n;i++)
+        {
+            cin>>p[i];
+        }
+        for(long long int i=0;i<n;i++)
+        {
+            cin>>fd[i];
+        }
+        long long int minF=INT_MAX;
+        long long int minD=INT_MAX;
+        for(long long int i=0;i<n;i++)
+        {
+            if(fd[i]==0)
+            {
+                minD=min(minD,p[i]);
+            }
+            else if(fd[i]==1)
+            {
+                minF=min(minF,p[i]);
+            }
+        }
+        long long int leftSum=minF+minD;
+        long long int total=100-s;
+        if(leftSum<=total)
+            cout<<"yes"<<'\n';
+        else
+            cout<<"no"<<'\n';
+    }
+	// your code goes here
+	return 0;
+}
