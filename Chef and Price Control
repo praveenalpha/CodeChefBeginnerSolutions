@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n,k;
+        cin>>n>>k;
+        int P[n];
+        long long int prevSum=0;
+        long long int newSum=0;
+        for(int i=0;i<n;i++){
+            cin>>P[i];
+            prevSum+=P[i];
+            if(P[i]>k)  newSum+=k;
+            else    newSum+=P[i];
+        }
+        cout<<prevSum-newSum<<'\n';
+    }
+	// your code goes here
+	return 0;
+}
