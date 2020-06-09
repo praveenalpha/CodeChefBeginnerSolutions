@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define lli long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    lli t;
+    cin>>t;
+    while(t--){
+        string str;
+        cin>>str;
+        int n = str.length();
+        lli count=0;
+        lli i=0;
+        while(i<=n){
+            if(i+1>=n)  break;
+            else if(str[i]!=str[i+1]){
+                count++;
+                i+=2;
+            }
+            else i++;
+        }
+        cout<<count<<'\n';
+    }
+    return 0;
+}
