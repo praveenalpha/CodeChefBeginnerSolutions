@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define lli long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    lli t;
+    cin>>t;
+    while(t--){
+        lli gs;
+        lli gn;
+        cin>>gs>>gn;
+        lli ans=0;
+        while(gs>=2){
+            ans+=(gs/gn);
+            gs=(gs%gn);
+            if(gs%2==0)
+                gn=gs;
+            else
+                gn=(gs-1);
+        }
+        ans += gs%2;
+        cout<<ans<<'\n';
+    }
+    return 0;
+}
