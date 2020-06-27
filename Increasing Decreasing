@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define lli long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    lli t;
+    cin>>t;
+    while(t--){
+        lli n;
+        cin>>n;
+        lli arr[n];
+        map<lli,lli> gq;
+        map<lli, lli>::iterator it ; 
+        int flag=0;
+        vector<lli> myVect;
+        lli sabseBada=-1e8;
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+            sabseBada = max(sabseBada,arr[i]);
+            it = gq.find(arr[i]); 
+      
+            if(it == gq.end()) 
+                gq.insert({ arr[i], 1 });
+            else{
+                it->second = it->second+1; 
+                if(it->second > 2){
+                    flag=1;
+                }
+            }
+        }
+        map<lli, lli>::iterator itr ; 
+        map<lli, lli>::iterator itr2 ; 
+
+        itr2 = gq.find(sabseBada);
+        if(itr2->second >=2)
+            flag=1;
+        
+        for (itr = gq.begin(); itr != gq.end(); ++itr) {
+            myVect.push_back(itr->first);
+            itr->second = itr->second - 1;
+        }
+        for (auto itr3 = gq.rbegin(); itr3 != gq.rend(); itr3++) { 
+            if(itr3->second > 1){
+                flag=1;
+                break;
+            }  
+            else if(itr3->second == 1)
+                myVect.push_back(itr3->first);
+        
+        } 
+        if(flag == 1){
+            cout<<"NO"<<'\n';
+        }
+        else{
+            cout<<"YES"<<'\n';
+            for(lli ele:myVect)
+                cout<<ele<<" ";
+            cout<<'\n';
+        }
+    }
+    return 0;
+}
