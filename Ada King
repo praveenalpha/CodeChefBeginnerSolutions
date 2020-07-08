@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define lli long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    lli t;
+    cin>>t;
+    while(t--){
+        int gk;
+        cin>>gk;
+        vector<vector<char>> cb(8,vector<char> (8,'X'));
+        cb[0][0] = 'O';
+            for(int i=0;i<8;i++){
+                for(int j=0;j<8;j++){
+                    
+                    if(gk!=0){
+                        if(i==0 && j==0){
+                            gk--;
+                            continue;
+                        }
+                            
+                    gk--;
+                    cb[i][j]='.';
+                    }
+                }
+            }
+        
+        for(int i=0;i<8;i++){
+            for(int j=0;j<8;j++){
+               
+                cout<<cb[i][j];
+            }
+            cout<<'\n';
+        }
+        cout<<'\n';
+        
+    }
+    return 0;
+}
