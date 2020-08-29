@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int gn;
+        cin>>gn;
+        vector<int> ga(gn,0);
+        unordered_map<int,int> fm;
+        for(int i=0;i<gn;i++){
+            cin>>ga[i];
+            if(fm[ga[i]]==0){
+                fm[ga[i]] = 1;
+            }
+            else
+                fm[ga[i]]++;
+        }
+        unordered_map<int,int> ans;
+        int sbv=0;
+        for(auto e:fm){
+            
+            if(ans[e.second] == 0){
+                ans[e.second] = 1;
+                sbv = max(sbv,ans[e.second]);
+            }
+            else{
+                ans[e.second]++;
+                sbv = max(sbv,ans[e.second]);
+            }
+        }
+        
+        int fa=INT_MAX;
+        for(auto e:ans){
+            if(sbv == e.second)
+                fa = min(fa,e.first);
+        }
+        cout<<fa<<'\n';
+    }
+	return 0;
+}
