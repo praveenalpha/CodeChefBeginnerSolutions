@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        vector<int> ans;
+        while(n>1){
+            ans.push_back(n%2);
+            n/=2;
+        }
+        if(n==1)
+            ans.push_back(1);
+        else if(n==0)
+            ans.push_back(0);
+        for(int i=ans.size()-1;i>=0;--i)
+            cout<<ans[i];
+        cout<<'\n';
+    }
+	// your code goes here
+	return 0;
+}
