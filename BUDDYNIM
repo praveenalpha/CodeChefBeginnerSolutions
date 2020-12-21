@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    long long int n,m,countA=0,countB=0;
+	    cin>>n>>m;
+	    vector<long long int> A(n);
+	    vector<long long int> B(m);
+	    
+	    for(long long int i=0;i<n;i++){
+	        cin>>A[i];
+	        if(A[i] != 0)
+	            countA++;
+	    }
+	    for(long long int i=0;i<m;i++){
+	        cin>>B[i];
+	        if(B[i] != 0)
+	            countB++;
+	    }
+	    if(countA != countB){
+	        cout<<"Alice"<<endl;
+	        continue;
+	    }
+	    
+	    sort(A.begin(), A.end());
+	    sort(B.begin(), B.end());
+	    int i=0,j=0;
+	    while(A[i] == 0)
+	        i++;
+	    while(B[j] == 0)
+	        j++;
+	        
+	    bool flag = false;
+	    while(i < n && j < m){
+	        if(A[i++] != B[j++]){
+	            cout<<"Alice"<<endl;
+	            flag = true;
+	            break;
+	        }
+	    }
+	    if(flag)
+	        continue;
+	    cout<<"Bob"<<endl;
+	}
+	return 0;
+}
